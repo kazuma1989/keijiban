@@ -42,23 +42,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yAs-EK-dBv">
-                                <rect key="frame" x="0.0" y="87" width="375" height="251"/>
+                                <rect key="frame" x="0.0" y="154" width="375" height="251"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eoc-GV-EI4">
-                                <rect key="frame" x="319" y="346" width="31" height="30"/>
+                                <rect key="frame" x="328" y="413" width="31" height="30"/>
                                 <state key="normal" title="投稿"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q6G-5B-lOg">
+                                <rect key="frame" x="67" y="96" width="208" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtm-A3-Cg6">
+                                <rect key="frame" x="16" y="99" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Eoc-GV-EI4" firstAttribute="leading" secondItem="lTL-R7-hfJ" secondAttribute="leading" constant="319" id="BMq-tF-abE"/>
-                            <constraint firstItem="lTL-R7-hfJ" firstAttribute="bottom" secondItem="Eoc-GV-EI4" secondAttribute="bottom" constant="291" id="LiW-CA-dUa"/>
+                            <constraint firstItem="Eoc-GV-EI4" firstAttribute="leading" secondItem="lTL-R7-hfJ" secondAttribute="leading" constant="328" id="BMq-tF-abE"/>
+                            <constraint firstItem="mtm-A3-Cg6" firstAttribute="centerY" secondItem="Q6G-5B-lOg" secondAttribute="centerY" constant="-1.5" id="E0z-J4-6XI"/>
+                            <constraint firstItem="lTL-R7-hfJ" firstAttribute="bottom" secondItem="Eoc-GV-EI4" secondAttribute="bottom" constant="224" id="LiW-CA-dUa"/>
                             <constraint firstItem="yAs-EK-dBv" firstAttribute="leading" secondItem="uC1-NB-6fL" secondAttribute="leadingMargin" constant="-16" id="M1X-NK-B1b"/>
-                            <constraint firstItem="yAs-EK-dBv" firstAttribute="top" secondItem="lTL-R7-hfJ" secondAttribute="top" constant="23" id="QV1-qh-a36"/>
+                            <constraint firstItem="yAs-EK-dBv" firstAttribute="top" secondItem="Q6G-5B-lOg" secondAttribute="bottom" constant="28" id="NJW-tW-c3t"/>
+                            <constraint firstItem="mtm-A3-Cg6" firstAttribute="leading" secondItem="uC1-NB-6fL" secondAttribute="leadingMargin" id="NO8-x1-10R"/>
+                            <constraint firstItem="yAs-EK-dBv" firstAttribute="top" secondItem="lTL-R7-hfJ" secondAttribute="top" constant="90" id="QV1-qh-a36"/>
+                            <constraint firstItem="lTL-R7-hfJ" firstAttribute="trailing" secondItem="Q6G-5B-lOg" secondAttribute="trailing" constant="100" id="UhG-fT-UvP"/>
                             <constraint firstItem="lTL-R7-hfJ" firstAttribute="trailing" secondItem="yAs-EK-dBv" secondAttribute="trailing" id="ofE-CT-pAy"/>
+                            <constraint firstItem="Q6G-5B-lOg" firstAttribute="leading" secondItem="mtm-A3-Cg6" secondAttribute="trailing" constant="16" id="wE8-Vx-z1H"/>
                             <constraint firstItem="Eoc-GV-EI4" firstAttribute="top" secondItem="yAs-EK-dBv" secondAttribute="bottom" constant="8" symbolic="YES" id="yHB-Qb-Vkk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lTL-R7-hfJ"/>
