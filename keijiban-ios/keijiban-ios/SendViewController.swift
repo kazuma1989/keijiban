@@ -13,29 +13,22 @@ import Moya
 
 class SendViewController: UIViewController {
 
-    let provider = MoyaProvider<ContributionAPI>(stubClosure: { (_: ContributionAPI) -> Moya.StubBehavior in
-        return .immediate
-    })
+    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var body: UITextView!
-
-    @IBAction func buttonTapped(_ sender: Any) {
-        guard let name = name.text, let body = body.text else {
-            return
-        }
-        let contribution = Contribution(contributer: name, body: body)
-        provider.rx.request(.create(contribution))
-            .subscribe(onSuccess: { (response) in
-                print(response.data)
-            }) { (error) in
-                print(error)
-        }
-                
-    }
 
     let disposeBag: DisposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let viewModel = ViewModel(input: (contributer: name.rx.text.orEmpty.asDriver(),  body: body.rx.text.orEmpty.asDriver(), sendTapped: sendButton.rx.tap.map{_ in }))
+
+        viewModel.send.subscribe(onNext:{ _ in
+           print("Success")
+        },onError:{ error in
+            print(error)
+        })
+            
 
         // Do any additional setup after loading the view.
     }

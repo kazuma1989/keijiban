@@ -17,6 +17,7 @@
 		96C049A320594B430010B6D5 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C049A220594B430010B6D5 /* SendViewController.swift */; };
 		96C049A520594B7F0010B6D5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C049A420594B7F0010B6D5 /* API.swift */; };
 		96C049A720594CD60010B6D5 /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C049A620594CD60010B6D5 /* Contribution.swift */; };
+		96C049AB205969510010B6D5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C049AA205969510010B6D5 /* ViewModel.swift */; };
 		FC00CF4C6CA311E3F1CA3D5E /* Pods_keijiban_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F6D726780E388EE75208C0 /* Pods_keijiban_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		96C049A220594B430010B6D5 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		96C049A420594B7F0010B6D5 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		96C049A620594CD60010B6D5 /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
+		96C049AA205969510010B6D5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		988B4A36FB8E96A7013B4CC6 /* Pods-keijiban-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keijiban-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-keijiban-ios/Pods-keijiban-ios.release.xcconfig"; sourceTree = "<group>"; };
 		A860032899DAC146A992A348 /* Pods-keijiban-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keijiban-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-keijiban-iosTests/Pods-keijiban-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 				96C04982205803450010B6D5 /* AppDelegate.swift */,
 				96C04984205803450010B6D5 /* ViewController.swift */,
 				96C04986205803450010B6D5 /* Main.storyboard */,
+				96C049AA205969510010B6D5 /* ViewModel.swift */,
 				96C049A220594B430010B6D5 /* SendViewController.swift */,
 				96C049A420594B7F0010B6D5 /* API.swift */,
 				96C049A620594CD60010B6D5 /* Contribution.swift */,
@@ -360,6 +363,7 @@
 				96C04983205803450010B6D5 /* AppDelegate.swift in Sources */,
 				96C049A520594B7F0010B6D5 /* API.swift in Sources */,
 				96C049A320594B430010B6D5 /* SendViewController.swift in Sources */,
+				96C049AB205969510010B6D5 /* ViewModel.swift in Sources */,
 				96C049A720594CD60010B6D5 /* Contribution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
