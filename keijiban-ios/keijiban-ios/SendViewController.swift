@@ -22,9 +22,12 @@ class SendViewController: UIViewController {
         super.viewDidLoad()
 
         let viewModel = ViewModel(input: (contributer: name.rx.text.orEmpty.asDriver(),  body: body.rx.text.orEmpty.asDriver(), sendTapped: sendButton.rx.tap.map{_ in }))
+        
+        body.layer.borderWidth = 1.0
+        body.layer.borderColor = UIColor.black.cgColor
 
-        viewModel.send.subscribe(onNext:{ _ in
-           print("Success")
+        viewModel.send.subscribe(onNext:{ [weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
         },onError:{[weak self] error in
             let alert: UIAlertController = UIAlertController(title: "エラー", message: "通信エラーが発生しました。再送信してください。", preferredStyle: .alert)
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default) { _ in

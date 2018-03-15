@@ -24,7 +24,7 @@
                     <navigationItem key="navigationItem" title="掲示板" id="lTg-sh-5Ck">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="2NA-5X-VzU">
                             <connections>
-                                <segue destination="GmW-ax-Skg" kind="show" id="vna-tK-g58"/>
+                                <segue destination="GmW-ax-Skg" kind="presentation" id="vna-tK-g58"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -42,19 +42,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yAs-EK-dBv">
-                                <rect key="frame" x="0.0" y="154" width="320" height="153"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="110" width="320" height="197"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q6G-5B-lOg">
-                                <rect key="frame" x="67" y="96" width="183" height="30"/>
+                                <rect key="frame" x="67" y="52" width="183" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtm-A3-Cg6">
-                                <rect key="frame" x="16" y="99" width="35" height="21"/>
+                                <rect key="frame" x="16" y="55" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

@@ -15,7 +15,7 @@ public enum ContributionAPI {
 
 extension ContributionAPI: TargetType{
     public var baseURL: URL {
-        return URL(string: "https://us-central1-peak-castle-197912.cloudfunctions.ne")!
+        return URL(string: "https://us-central1-peak-castle-197912.cloudfunctions.net")!
     }
     
     public var path: String {
