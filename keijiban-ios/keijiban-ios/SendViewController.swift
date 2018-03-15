@@ -25,8 +25,12 @@ class SendViewController: UIViewController {
 
         viewModel.send.subscribe(onNext:{ _ in
            print("Success")
-        },onError:{ error in
-            print(error)
+        },onError:{[weak self] error in
+            let alert: UIAlertController = UIAlertController(title: "エラー", message: "通信エラーが発生しました。再送信してください。", preferredStyle: .alert)
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default) { _ in
+            }
+            alert.addAction(defaultAction)
+            self?.present(alert, animated: true, completion:nil)
         })
             
 

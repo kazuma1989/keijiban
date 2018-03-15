@@ -24,28 +24,23 @@ class ViewModel {
         )
         ){
         let contribution = Driver.combineLatest(input.contributer,input.body) {
-            (contributer: $0, body: $1)
+            (contributor: $0, body: $1)
         }
         
         let provider = MoyaProvider<ContributionAPI>(stubClosure: { (_: ContributionAPI) -> Moya.StubBehavior in
-            return .immediate
+            return .never
         })
         
         send = input.sendTapped.debug("tapped")
             .withLatestFrom(contribution)
             .map{ pair -> Contribution in
-               let contribution = Contribution(contributer: pair.contributer ,body: pair.body)
+               let contribution = Contribution(contributor: pair.contributor ,body: pair.body)
                 return contribution
             }
             .debug("contribution")
             .flatMap { (contribution) -> PrimitiveSequence<SingleTrait, Response> in
-                return provider.rx.request(.create(contribution))
+                return provider.rx.request(.create(contribution)).retry(3)
             }.debug("response")
-//            }.flatMapLatest{ [unowned self] in
-//                let provider = MoyaProvider<ContributionAPI>(stubClosure: { (_: ContributionAPI) -> Moya.StubBehavior in
-//                    return .immediate
-//                })
-//                return provier.rx.request(.create(contribution)).catchError()
         }
 
 }
