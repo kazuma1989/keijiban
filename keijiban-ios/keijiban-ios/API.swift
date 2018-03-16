@@ -11,6 +11,7 @@ import Moya
 
 public enum ContributionAPI {
     case create(Contribution)
+    case list
 }
 
 extension ContributionAPI: TargetType{
@@ -20,25 +21,34 @@ extension ContributionAPI: TargetType{
     
     public var path: String {
         switch self {
-        case .create:
+        case .create, .list:
             return "/message"
         }
     }
     
     public var method: Moya.Method {
-        return .post
+        switch self {
+        case .list:
+            return .get
+        case .create:
+            return .post
+        }
     }
     
     public var task: Task {
         switch self {
         case .create(let contribution):
             return .requestJSONEncodable(contribution)
+        default:
+            return .requestPlain
         }
     }
     
     public var sampleData: Data {
         switch self {
         case .create:
+            return "{\"contributer\":\"homahi\", \"body\":\"hello\"}".data(using:String.Encoding.utf8)!
+        case .list:
             return "{\"contributer\":\"homahi\", \"body\":\"hello\"}".data(using:String.Encoding.utf8)!
         }
     }

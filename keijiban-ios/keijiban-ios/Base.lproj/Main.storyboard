@@ -18,7 +18,19 @@
                     <view key="view" contentMode="scaleToFill" id="X5z-yY-HuB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gQS-20-NLv">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gQS-20-NLv" firstAttribute="top" secondItem="hdv-z3-iN1" secondAttribute="top" id="2Mp-tn-ux0"/>
+                            <constraint firstAttribute="trailing" secondItem="gQS-20-NLv" secondAttribute="trailing" id="OSd-9q-3vF"/>
+                            <constraint firstItem="gQS-20-NLv" firstAttribute="leading" secondItem="X5z-yY-HuB" secondAttribute="leading" id="YvP-zn-Lw4"/>
+                            <constraint firstItem="gQS-20-NLv" firstAttribute="bottom" secondItem="hdv-z3-iN1" secondAttribute="bottom" id="u1P-vr-sha"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hdv-z3-iN1"/>
                     </view>
                     <navigationItem key="navigationItem" title="掲示板" id="lTg-sh-5Ck">
@@ -28,10 +40,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="gQS-20-NLv" id="BNm-wt-acE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yjl-V1-9vg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="107"/>
+            <point key="canvasLocation" x="1141.875" y="106.69014084507042"/>
         </scene>
         <!--Send View Controller-->
         <scene sceneID="Yu9-XH-gtf">
