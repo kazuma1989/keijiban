@@ -14,6 +14,7 @@ import Moya
 class ViewController: UIViewController {
 
     let viewModel = ViewModel()
+    let disposeBag = DisposeBag()
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
             cell.contributor.text = element.contributor
             cell.body.text = element.body
             return cell
-        }
+        }.disposed(by: disposeBag)
     }
 
     override func didReceiveMemoryWarning() {

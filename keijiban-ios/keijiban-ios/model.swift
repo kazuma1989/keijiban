@@ -14,6 +14,7 @@ import RxCocoa
 class ContributionModel {
     
     static let instance = ContributionModel()
+    let disposeBag = DisposeBag()
     let contribution: PublishSubject<[Contribution]> = PublishSubject<[Contribution]>()
     
     let provider = MoyaProvider<ContributionAPI>(stubClosure: {
@@ -30,7 +31,7 @@ class ContributionModel {
             self.contribution.onNext(contributions)
         }) { (error) in
             self.contribution.onError(error)
-        }
+        }.disposed(by: disposeBag)
             
     }
 }

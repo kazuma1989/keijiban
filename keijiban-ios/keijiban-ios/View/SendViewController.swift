@@ -16,7 +16,8 @@ class SendViewController: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var body: UITextView!
-
+    @IBOutlet weak var cancel: UIBarButtonItem!
+    
     let disposeBag: DisposeBag = DisposeBag()
     let model: ContributionModel = ContributionModel.instance
     override func viewDidLoad() {
@@ -36,8 +37,12 @@ class SendViewController: UIViewController {
             }
             alert.addAction(defaultAction)
             self?.present(alert, animated: true, completion:nil)
-        })
-            
+        }).disposed(by: disposeBag)
+        
+        cancel.rx.tap.subscribe(onNext: {
+            self.dismiss(animated: true, completion: nil)
+        }).disposed(by: disposeBag)
+
 
         // Do any additional setup after loading the view.
     }
