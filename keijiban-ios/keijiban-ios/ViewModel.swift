@@ -14,16 +14,11 @@ import Moya
 class ViewModel {
     
     let contribution: Observable<[Contribution]>
+    let model: ContributionModel = ContributionModel.instance
 
     init() {
-        let provider = MoyaProvider<ContributionAPI>(stubClosure: {
-            (_: ContributionAPI) -> Moya.StubBehavior in
-            return .never
-        })
+        contribution = model.contribution.asObservable().debug("fromModel")
+        model.fetchContribution()
         
-        contribution = Observable.just(1).flatMap {_ in
-           return provider.rx.request(.list).debug("request").retry(3).map([Contribution].self)
-
-        }
     }
 }

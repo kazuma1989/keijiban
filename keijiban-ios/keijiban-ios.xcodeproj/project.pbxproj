@@ -11,6 +11,7 @@
 		963865EE205BF18F00F530A0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963865ED205BF18F00F530A0 /* ViewModel.swift */; };
 		963865F3205BFD9600F530A0 /* ContributionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963865F1205BFD9600F530A0 /* ContributionTableViewCell.swift */; };
 		963865F4205BFD9600F530A0 /* ContributionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963865F2205BFD9600F530A0 /* ContributionTableViewCell.xib */; };
+		963865FA205C8A1700F530A0 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963865F9205C8A1700F530A0 /* model.swift */; };
 		96C04983205803450010B6D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C04982205803450010B6D5 /* AppDelegate.swift */; };
 		96C04985205803450010B6D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C04984205803450010B6D5 /* ViewController.swift */; };
 		96C04988205803450010B6D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C04986205803450010B6D5 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		963865ED205BF18F00F530A0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		963865F1205BFD9600F530A0 /* ContributionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionTableViewCell.swift; sourceTree = "<group>"; };
 		963865F2205BFD9600F530A0 /* ContributionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContributionTableViewCell.xib; sourceTree = "<group>"; };
+		963865F9205C8A1700F530A0 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		96C0497F205803450010B6D5 /* keijiban-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "keijiban-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C04982205803450010B6D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96C04984205803450010B6D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		96C04981205803450010B6D5 /* keijiban-ios */ = {
 			isa = PBXGroup;
 			children = (
+				963865F9205C8A1700F530A0 /* model.swift */,
 				96C04982205803450010B6D5 /* AppDelegate.swift */,
 				963865EC205BF13400F530A0 /* View */,
 				96C04986205803450010B6D5 /* Main.storyboard */,
@@ -384,6 +387,7 @@
 				96C049AB205969510010B6D5 /* SendViewModel.swift in Sources */,
 				963865F3205BFD9600F530A0 /* ContributionTableViewCell.swift in Sources */,
 				96C049A720594CD60010B6D5 /* Contribution.swift in Sources */,
+				963865FA205C8A1700F530A0 /* model.swift in Sources */,
 				963865EE205BF18F00F530A0 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

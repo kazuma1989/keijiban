@@ -18,6 +18,7 @@ class SendViewController: UIViewController {
     @IBOutlet weak var body: UITextView!
 
     let disposeBag: DisposeBag = DisposeBag()
+    let model: ContributionModel = ContributionModel.instance
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +28,7 @@ class SendViewController: UIViewController {
         body.layer.borderColor = UIColor.black.cgColor
 
         viewModel.send.subscribe(onNext:{ [weak self] _ in
+            self?.model.update()
             self?.dismiss(animated: true, completion: nil)
         },onError:{[weak self] error in
             let alert: UIAlertController = UIAlertController(title: "エラー", message: "通信エラーが発生しました。再送信してください。", preferredStyle: .alert)
