@@ -28,6 +28,7 @@ class ViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! ContributionTableViewCell
             cell.contributor.text = element.contributor
             cell.body.text = element.body
+            cell.id.text = String(element.id)
             return cell
         }.disposed(by: disposeBag)
     }

@@ -10,6 +10,7 @@ import UIKit
 
 class ContributionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var id: UILabel!
     @IBOutlet weak var contributor: UILabel!
     @IBOutlet weak var body: UITextView!
     override func awakeFromNib() {

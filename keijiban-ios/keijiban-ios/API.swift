@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 public enum ContributionAPI {
-    case create(Contribution)
+    case create(ContributionRequest)
     case list
 }
 

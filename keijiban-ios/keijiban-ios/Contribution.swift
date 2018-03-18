@@ -9,6 +9,12 @@
 import Foundation
 
 public struct Contribution: Codable {
+    let id: Int
+    let contributor: String
+    let body: String
+}
+
+public struct ContributionRequest: Codable {
     let contributor: String
     let body: String
 }

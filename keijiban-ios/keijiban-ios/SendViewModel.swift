@@ -33,8 +33,8 @@ class SendViewModel {
         
         send = input.sendTapped.debug("tapped")
             .withLatestFrom(contribution)
-            .map{ pair -> Contribution in
-                let contribution = Contribution(contributor: pair.contributor ,body: pair.body)
+            .map{ pair -> ContributionRequest in
+                let contribution = ContributionRequest(contributor: pair.contributor ,body: pair.body)
                 return contribution
             }
             .debug("contribution")
