@@ -20,7 +20,7 @@ class ViewModel {
     init() {
         contribution = model.contribution.asObservable().debug("fromModel")
         model.fetchContribution()
-        editingContributionId = BehaviorSubject<Int>(value: 0)
+        editingContributionId = BehaviorSubject<Int>(value: 0) // 0は全てのIDが更新対象ではないことを指す。現在IDは16桁なのでいけている。
         
     }
     

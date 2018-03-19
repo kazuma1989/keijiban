@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         tableView.register(UINib(nibName: String(describing: ContributionTableViewCell.self), bundle: nil), forCellReuseIdentifier: "Cell")
         
         tableView.delegate = self
+        tableView.separatorStyle = .singleLine
+        tableView.separatorInset = UIEdgeInsets.zero
+        tableView.layoutMargins = UIEdgeInsets.zero
 
         viewModel.contribution.bind(to: tableView.rx.items) { [weak self] tableView, row, element in
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! ContributionTableViewCell
