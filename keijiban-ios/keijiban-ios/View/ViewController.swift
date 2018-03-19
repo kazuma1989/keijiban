@@ -24,11 +24,17 @@ class ViewController: UIViewController {
         
         tableView.delegate = self
 
-        viewModel.contribution.bind(to: tableView.rx.items) { tableView, row, element in
+        viewModel.contribution.bind(to: tableView.rx.items) { [weak self] tableView, row, element in
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! ContributionTableViewCell
             cell.contributor.text = element.contributor
             cell.body.text = element.body
             cell.id.text = String(element.id)
+            if let strongSelf = self {
+                cell.configure(with: strongSelf.viewModel.editingContributionId.debug("currentId").map{$0 == element.id},
+                               action: strongSelf.viewModel.onEdit(contribution: element))
+                
+            }
+
             return cell
         }.disposed(by: disposeBag)
     }
@@ -43,7 +49,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 212.5
     }
     
 }

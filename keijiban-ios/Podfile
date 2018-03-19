@@ -7,6 +7,7 @@ target 'keijiban-ios' do
 
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Action'
   pod 'Moya/RxSwift'
 
   # Pods for keijiban-ios

@@ -106,7 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				96C04984205803450010B6D5 /* ViewController.swift */,
+				963865ED205BF18F00F530A0 /* ViewModel.swift */,
 				96C049A220594B430010B6D5 /* SendViewController.swift */,
+				96C049AA205969510010B6D5 /* SendViewModel.swift */,
 				963865F1205BFD9600F530A0 /* ContributionTableViewCell.swift */,
 				963865F2205BFD9600F530A0 /* ContributionTableViewCell.xib */,
 			);
@@ -140,8 +142,6 @@
 				96C04982205803450010B6D5 /* AppDelegate.swift */,
 				963865EC205BF13400F530A0 /* View */,
 				96C04986205803450010B6D5 /* Main.storyboard */,
-				96C049AA205969510010B6D5 /* SendViewModel.swift */,
-				963865ED205BF18F00F530A0 /* ViewModel.swift */,
 				96C049A420594B7F0010B6D5 /* API.swift */,
 				96C049A620594CD60010B6D5 /* Contribution.swift */,
 				96C04989205803450010B6D5 /* Assets.xcassets */,
@@ -306,6 +306,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-keijiban-ios/Pods-keijiban-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -314,6 +315,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",

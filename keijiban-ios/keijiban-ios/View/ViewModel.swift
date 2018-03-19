@@ -9,16 +9,25 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import Moya
+import Action
 
 class ViewModel {
     
     let contribution: Observable<[Contribution]>
+    let editingContributionId: BehaviorSubject<Int>
     let model: ContributionModel = ContributionModel.instance
 
     init() {
         contribution = model.contribution.asObservable().debug("fromModel")
         model.fetchContribution()
+        editingContributionId = BehaviorSubject<Int>(value: 0)
         
+    }
+    
+    func onEdit(contribution: Contribution) -> CocoaAction {
+        return CocoaAction { _ in
+            self.editingContributionId.onNext(contribution.id)
+            return Observable.empty()
+        }
     }
 }
