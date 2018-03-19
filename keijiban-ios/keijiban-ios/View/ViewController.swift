@@ -30,8 +30,10 @@ class ViewController: UIViewController {
             cell.body.text = element.body
             cell.id.text = String(element.id)
             if let strongSelf = self {
-                cell.configure(with: strongSelf.viewModel.editingContributionId.debug("currentId").map{$0 == element.id},
-                               action: strongSelf.viewModel.onEdit(contribution: element))
+                cell.configure(with: strongSelf.viewModel.editingContributionId.map{$0 == element.id},
+                               editing: strongSelf.viewModel.onEdit(with: element),
+                               cancel: strongSelf.viewModel.onCancel(),
+                               done: strongSelf.viewModel.onDone(with: element))
                 
             }
 

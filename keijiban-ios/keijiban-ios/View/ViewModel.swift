@@ -24,10 +24,23 @@ class ViewModel {
         
     }
     
-    func onEdit(contribution: Contribution) -> CocoaAction {
+    func onEdit(with: Contribution) -> CocoaAction {
         return CocoaAction { _ in
-            self.editingContributionId.onNext(contribution.id)
+            self.editingContributionId.onNext(with.id)
             return Observable.empty()
+        }
+    }
+    
+    func onCancel() -> CocoaAction {
+        return CocoaAction { _ in
+           self.editingContributionId.onNext(0)
+            return Observable.empty()
+        }
+    }
+    
+    func onDone(with: Contribution) -> CocoaAction {
+        return CocoaAction { _ in
+           return Observable.empty()
         }
     }
 }

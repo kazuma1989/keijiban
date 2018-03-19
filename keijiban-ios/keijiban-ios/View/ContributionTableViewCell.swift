@@ -32,7 +32,7 @@ class ContributionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(with isEditing: Observable<Bool>, action: CocoaAction) {
+    func configure(with isEditing: Observable<Bool>, editing: CocoaAction, cancel: CocoaAction, done: CocoaAction) {
         isEditing.bind(to: body.rx.isUserInteractionEnabled).disposed(by: disposeBag)
         
         isEditing
@@ -50,7 +50,9 @@ class ContributionTableViewCell: UITableViewCell {
         isEditing.map{ !$0 }.bind(to: doneButton.rx.isHidden).disposed(by: disposeBag)
         isEditing.map{ !$0 }.bind(to: cancelButton.rx.isHidden).disposed(by: disposeBag)
         
-        editButton.rx.action = action
+        editButton.rx.action = editing
+        cancelButton.rx.action = cancel
+        doneButton.rx.action = done
     }
     
     override func prepareForReuse() {
