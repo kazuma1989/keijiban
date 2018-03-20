@@ -19,11 +19,12 @@ class ContributionTableViewCell: UITableViewCell {
     @IBOutlet weak var id: UILabel!
     @IBOutlet weak var contributor: UILabel!
     @IBOutlet weak var body: UITextView!
+    var original: String?
     var disposeBag = DisposeBag()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,7 +33,7 @@ class ContributionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(with isEditing: Observable<Bool>, editing: CocoaAction, cancel: CocoaAction, done: CocoaAction) {
+    func configure(with isEditing: Observable<Bool>, editing: CocoaAction, cancel: CocoaAction, done: Action<(String, String), Void>) {
         isEditing.bind(to: body.rx.isUserInteractionEnabled).disposed(by: disposeBag)
         
         isEditing
@@ -51,12 +52,22 @@ class ContributionTableViewCell: UITableViewCell {
         isEditing.map{ !$0 }.bind(to: cancelButton.rx.isHidden).disposed(by: disposeBag)
         
         editButton.rx.action = editing
-        cancelButton.rx.action = cancel
-        doneButton.rx.action = done
+        cancelButton.rx.tap.subscribe(onNext: { [weak self ]_ in
+            if let original = self?.original {
+                self?.body.text = original
+                
+            }
+           cancel.execute(())
+        }).disposed(by: disposeBag)
+        doneButton.rx.tap.subscribe(onNext: { _ in
+            done.execute((self.id.text!, self.body.text!))
+        }).disposed(by: disposeBag)
+
     }
     
     override func prepareForReuse() {
         editButton.rx.action = nil
+        cancelButton.rx.action = nil
         disposeBag = DisposeBag()
         super.prepareForReuse()
     }

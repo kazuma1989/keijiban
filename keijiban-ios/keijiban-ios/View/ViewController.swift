@@ -31,14 +31,16 @@ class ViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! ContributionTableViewCell
             cell.contributor.text = element.contributor
             cell.body.text = element.body
+            cell.original = element.body
             cell.id.text = String(element.id)
             if let strongSelf = self {
                 cell.configure(with: strongSelf.viewModel.editingContributionId.map{$0 == element.id},
                                editing: strongSelf.viewModel.onEdit(with: element),
                                cancel: strongSelf.viewModel.onCancel(),
-                               done: strongSelf.viewModel.onDone(with: element))
+                               done: strongSelf.viewModel.onDone())
                 
             }
+
 
             return cell
         }.disposed(by: disposeBag)

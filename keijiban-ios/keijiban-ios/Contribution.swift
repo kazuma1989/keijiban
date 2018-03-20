@@ -18,3 +18,7 @@ public struct ContributionRequest: Codable {
     let contributor: String
     let body: String
 }
+
+public struct UpdateContributionRequest: Codable {
+    let body: String
+}

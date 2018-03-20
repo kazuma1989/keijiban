@@ -28,19 +28,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="384" height="212.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cKo-vW-fFs">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKo-vW-fFs">
                         <rect key="frame" x="0.0" y="0.0" width="384" height="213"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                 <integer key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fnw-wb-wqK">
-                        <rect key="frame" x="16" y="54.5" width="342" height="126.5"/>
+                        <rect key="frame" x="16" y="55" width="342" height="126"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -53,7 +51,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5Z-0J-Fgi">
-                        <rect key="frame" x="16" y="24" width="264" height="22.5"/>
+                        <rect key="frame" x="16" y="24" width="264" height="23"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -62,16 +60,17 @@
                         <rect key="frame" x="306" y="23" width="78" height="24"/>
                         <state key="normal" image="edit"/>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AK-aA-aAR">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AK-aA-aAR">
                         <rect key="frame" x="322" y="19" width="55" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Cancel">
                             <color key="titleColor" red="1" green="0.089152416779999993" blue="0.1118545894" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ezz-iQ-SBM">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ezz-iQ-SBM">
                         <rect key="frame" x="258" y="19" width="46" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="pob-yX-S7m"/>
+                        </constraints>
                         <state key="normal" title="Done"/>
                     </button>
                 </subviews>
@@ -80,24 +79,35 @@
                     <constraint firstItem="5WF-RM-eqO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="233" id="ATE-0f-Mly"/>
                     <constraint firstItem="fnw-wb-wqK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Do2-PA-rlJ"/>
                     <constraint firstItem="5WF-RM-eqO" firstAttribute="baseline" secondItem="G5Z-0J-Fgi" secondAttribute="baseline" constant="166" id="Efe-zG-X4G"/>
+                    <constraint firstItem="5WF-RM-eqO" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="FWw-hb-u5P"/>
                     <constraint firstAttribute="trailing" secondItem="P9B-jp-Zz7" secondAttribute="trailing" id="JLH-D9-naK"/>
                     <constraint firstItem="P9B-jp-Zz7" firstAttribute="centerY" secondItem="G5Z-0J-Fgi" secondAttribute="centerY" id="LAg-K2-zls"/>
+                    <constraint firstItem="cKo-vW-fFs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Qm4-RF-SR0"/>
+                    <constraint firstItem="2AK-aA-aAR" firstAttribute="leading" secondItem="ezz-iQ-SBM" secondAttribute="trailing" constant="18" id="RAA-Zw-UT7"/>
+                    <constraint firstItem="fnw-wb-wqK" firstAttribute="top" secondItem="ezz-iQ-SBM" secondAttribute="bottom" constant="6" id="TFo-7U-fFI"/>
                     <constraint firstItem="fnw-wb-wqK" firstAttribute="top" secondItem="G5Z-0J-Fgi" secondAttribute="bottom" constant="8" id="TOz-Hv-s3V"/>
+                    <constraint firstItem="5WF-RM-eqO" firstAttribute="top" secondItem="fnw-wb-wqK" secondAttribute="bottom" constant="7" id="Uhl-dr-9VM"/>
+                    <constraint firstItem="cKo-vW-fFs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VNg-Sf-PYs"/>
+                    <constraint firstItem="P9B-jp-Zz7" firstAttribute="leading" secondItem="ezz-iQ-SBM" secondAttribute="trailing" constant="2" id="Wqa-Eo-UJr"/>
                     <constraint firstItem="G5Z-0J-Fgi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="Xb7-kc-SsT"/>
                     <constraint firstAttribute="trailing" secondItem="fnw-wb-wqK" secondAttribute="trailing" constant="26" id="aV7-nP-WQk"/>
+                    <constraint firstItem="cKo-vW-fFs" firstAttribute="trailing" secondItem="P9B-jp-Zz7" secondAttribute="trailing" id="d0V-SO-264"/>
                     <constraint firstAttribute="trailingMargin" secondItem="G5Z-0J-Fgi" secondAttribute="trailing" constant="88" id="fPA-M9-c9T"/>
+                    <constraint firstItem="cKo-vW-fFs" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gGm-Tl-xUs"/>
                     <constraint firstItem="P9B-jp-Zz7" firstAttribute="leading" secondItem="G5Z-0J-Fgi" secondAttribute="trailing" constant="26" id="gqk-5K-fhA"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="2AK-aA-aAR" secondAttribute="trailing" constant="-9" id="mQC-gx-uRq"/>
+                    <constraint firstItem="ezz-iQ-SBM" firstAttribute="baseline" secondItem="2AK-aA-aAR" secondAttribute="baseline" id="nTc-NB-cuG"/>
                     <constraint firstAttribute="bottomMargin" secondItem="fnw-wb-wqK" secondAttribute="bottom" constant="21" id="yGO-Ih-Pkw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="body" destination="fnw-wb-wqK" id="cGq-ay-p8l"/>
-                <outlet property="cancelButton" destination="2AK-aA-aAR" id="YDd-qS-uSr"/>
-                <outlet property="contributor" destination="G5Z-0J-Fgi" id="hAh-4c-jkb"/>
-                <outlet property="doneButton" destination="ezz-iQ-SBM" id="NaS-xA-5wx"/>
-                <outlet property="editButton" destination="P9B-jp-Zz7" id="jRV-3U-ZxJ"/>
-                <outlet property="id" destination="5WF-RM-eqO" id="pyi-yd-0eG"/>
+                <outlet property="body" destination="fnw-wb-wqK" id="VbE-Cq-cRh"/>
+                <outlet property="cancelButton" destination="2AK-aA-aAR" id="2Jm-St-QA4"/>
+                <outlet property="contributor" destination="G5Z-0J-Fgi" id="9eW-hY-ivz"/>
+                <outlet property="doneButton" destination="ezz-iQ-SBM" id="up2-NM-b2o"/>
+                <outlet property="editButton" destination="P9B-jp-Zz7" id="rL6-ms-bwk"/>
+                <outlet property="id" destination="5WF-RM-eqO" id="NNg-dM-pi7"/>
             </connections>
             <point key="canvasLocation" x="28" y="105.5"/>
         </tableViewCell>

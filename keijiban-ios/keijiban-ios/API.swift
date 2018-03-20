@@ -12,6 +12,7 @@ import Moya
 public enum ContributionAPI {
     case create(ContributionRequest)
     case list
+    case update(String, UpdateContributionRequest)
 }
 
 extension ContributionAPI: TargetType{
@@ -23,6 +24,8 @@ extension ContributionAPI: TargetType{
         switch self {
         case .create, .list:
             return "/message"
+        case .update(let id, _):
+        return "/message/\(id)"
         }
     }
     
@@ -32,12 +35,16 @@ extension ContributionAPI: TargetType{
             return .get
         case .create:
             return .post
+        case .update:
+            return .put
         }
     }
     
     public var task: Task {
         switch self {
         case .create(let contribution):
+            return .requestJSONEncodable(contribution)
+        case .update(_, let contribution):
             return .requestJSONEncodable(contribution)
         default:
             return .requestPlain
@@ -48,7 +55,7 @@ extension ContributionAPI: TargetType{
         switch self {
         case .create:
             return "{\"contributer\":\"homahi\", \"body\":\"hello\"}".data(using:String.Encoding.utf8)!
-        case .list:
+        case .list, .update:
             return "{\"contributer\":\"homahi\", \"body\":\"hello\"}".data(using:String.Encoding.utf8)!
         }
     }

@@ -38,9 +38,11 @@ class ViewModel {
         }
     }
     
-    func onDone(with: Contribution) -> CocoaAction {
-        return CocoaAction { _ in
-           return Observable.empty()
+    func onDone() -> Action<(String, String), Void>{
+        return Action { (id, body) in
+            self.editingContributionId.onNext(0)
+            let body = UpdateContributionRequest(body: body)
+            return self.model.provider.rx.request(.update(id, body)).asObservable().debug("update").map{ _ in}
         }
     }
 }
