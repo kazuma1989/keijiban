@@ -45,4 +45,14 @@ class ViewModel {
             return self.model.provider.rx.request(.update(id, body)).asObservable().debug("update").map{ _ in}
         }
     }
+    
+    func onDelete(with id: String) -> CocoaAction {
+        return CocoaAction { [weak self] _ in
+            self?.model.provider.rx.request(.delete(id)).debug("delete")
+                .subscribe(onSuccess: { _ in
+                    self?.model.update()
+                })
+            return Observable.empty()
+        }
+    }
 }

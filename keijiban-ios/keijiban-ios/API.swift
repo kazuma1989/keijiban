@@ -13,6 +13,7 @@ public enum ContributionAPI {
     case create(ContributionRequest)
     case list
     case update(String, UpdateContributionRequest)
+    case delete(String)
 }
 
 extension ContributionAPI: TargetType{
@@ -25,7 +26,9 @@ extension ContributionAPI: TargetType{
         case .create, .list:
             return "/message"
         case .update(let id, _):
-        return "/message/\(id)"
+            return "/message/\(id)"
+        case .delete(let id):
+            return "/message/\(id)"
         }
     }
     
@@ -37,6 +40,8 @@ extension ContributionAPI: TargetType{
             return .post
         case .update:
             return .put
+        case .delete:
+            return .delete
         }
     }
     
@@ -55,7 +60,7 @@ extension ContributionAPI: TargetType{
         switch self {
         case .create:
             return "{\"contributer\":\"homahi\", \"body\":\"hello\"}".data(using:String.Encoding.utf8)!
-        case .list, .update:
+        case .list, .update, .delete:
             return "{\"contributer\":\"homahi\", \"body\":\"hello\"}".data(using:String.Encoding.utf8)!
         }
     }

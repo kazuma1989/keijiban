@@ -37,7 +37,8 @@ class ViewController: UIViewController {
                 cell.configure(with: strongSelf.viewModel.editingContributionId.map{$0 == element.id},
                                editing: strongSelf.viewModel.onEdit(with: element),
                                cancel: strongSelf.viewModel.onCancel(),
-                               done: strongSelf.viewModel.onDone())
+                               done: strongSelf.viewModel.onDone(),
+                               delete: strongSelf.viewModel.onDelete(with: String(element.id)))
                 
             }
 
@@ -58,5 +59,4 @@ extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 212.5
     }
-    
 }

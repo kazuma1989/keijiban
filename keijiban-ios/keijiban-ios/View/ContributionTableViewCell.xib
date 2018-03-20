@@ -73,6 +73,11 @@
                         </constraints>
                         <state key="normal" title="Done"/>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrJ-EU-QtX">
+                        <rect key="frame" x="269" y="22" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" image="dustbin"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="G5Z-0J-Fgi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1Wp-Kv-hZF"/>
@@ -105,6 +110,7 @@
                 <outlet property="body" destination="fnw-wb-wqK" id="VbE-Cq-cRh"/>
                 <outlet property="cancelButton" destination="2AK-aA-aAR" id="2Jm-St-QA4"/>
                 <outlet property="contributor" destination="G5Z-0J-Fgi" id="9eW-hY-ivz"/>
+                <outlet property="deleteButton" destination="KrJ-EU-QtX" id="ooh-Rm-GN2"/>
                 <outlet property="doneButton" destination="ezz-iQ-SBM" id="up2-NM-b2o"/>
                 <outlet property="editButton" destination="P9B-jp-Zz7" id="rL6-ms-bwk"/>
                 <outlet property="id" destination="5WF-RM-eqO" id="NNg-dM-pi7"/>
@@ -113,6 +119,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="dustbin" width="24" height="24"/>
         <image name="edit" width="24" height="24"/>
     </resources>
 </document>
