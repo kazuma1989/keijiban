@@ -73,15 +73,15 @@
                         </constraints>
                         <state key="normal" title="Done"/>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrJ-EU-QtX">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrJ-EU-QtX">
                         <rect key="frame" x="269" y="22" width="24" height="24"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="dustbin"/>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="G5Z-0J-Fgi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1Wp-Kv-hZF"/>
                     <constraint firstItem="5WF-RM-eqO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="233" id="ATE-0f-Mly"/>
+                    <constraint firstItem="KrJ-EU-QtX" firstAttribute="centerX" secondItem="ezz-iQ-SBM" secondAttribute="centerX" id="Atw-ZV-oza"/>
                     <constraint firstItem="fnw-wb-wqK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Do2-PA-rlJ"/>
                     <constraint firstItem="5WF-RM-eqO" firstAttribute="baseline" secondItem="G5Z-0J-Fgi" secondAttribute="baseline" constant="166" id="Efe-zG-X4G"/>
                     <constraint firstItem="5WF-RM-eqO" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="FWw-hb-u5P"/>
@@ -102,6 +102,7 @@
                     <constraint firstItem="P9B-jp-Zz7" firstAttribute="leading" secondItem="G5Z-0J-Fgi" secondAttribute="trailing" constant="26" id="gqk-5K-fhA"/>
                     <constraint firstAttribute="trailingMargin" secondItem="2AK-aA-aAR" secondAttribute="trailing" constant="-9" id="mQC-gx-uRq"/>
                     <constraint firstItem="ezz-iQ-SBM" firstAttribute="baseline" secondItem="2AK-aA-aAR" secondAttribute="baseline" id="nTc-NB-cuG"/>
+                    <constraint firstItem="KrJ-EU-QtX" firstAttribute="centerY" secondItem="ezz-iQ-SBM" secondAttribute="centerY" id="skt-Yb-X5m"/>
                     <constraint firstAttribute="bottomMargin" secondItem="fnw-wb-wqK" secondAttribute="bottom" constant="21" id="yGO-Ih-Pkw"/>
                 </constraints>
             </tableViewCellContentView>

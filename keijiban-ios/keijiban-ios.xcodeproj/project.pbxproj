@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		461C25645E0DB3351BF4B05F /* Pods_keijiban_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FBE04070BC98002A99254CF /* Pods_keijiban_iosTests.framework */; };
+		96206936206277D9001B51CF /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96206935206277D9001B51CF /* LoginRequest.swift */; };
+		9620693820627C15001B51CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9620693720627C15001B51CF /* LoginViewController.swift */; };
 		963865EE205BF18F00F530A0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963865ED205BF18F00F530A0 /* ViewModel.swift */; };
 		963865F3205BFD9600F530A0 /* ContributionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963865F1205BFD9600F530A0 /* ContributionTableViewCell.swift */; };
 		963865F4205BFD9600F530A0 /* ContributionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963865F2205BFD9600F530A0 /* ContributionTableViewCell.xib */; };
@@ -40,6 +42,8 @@
 		3FBE04070BC98002A99254CF /* Pods_keijiban_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keijiban_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F6D726780E388EE75208C0 /* Pods_keijiban_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keijiban_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9124FE33314CC65D99EC63A4 /* Pods-keijiban-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keijiban-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-keijiban-ios/Pods-keijiban-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		96206935206277D9001B51CF /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		9620693720627C15001B51CF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		963865ED205BF18F00F530A0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		963865F1205BFD9600F530A0 /* ContributionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionTableViewCell.swift; sourceTree = "<group>"; };
 		963865F2205BFD9600F530A0 /* ContributionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContributionTableViewCell.xib; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				96C049AA205969510010B6D5 /* SendViewModel.swift */,
 				963865F1205BFD9600F530A0 /* ContributionTableViewCell.swift */,
 				963865F2205BFD9600F530A0 /* ContributionTableViewCell.xib */,
+				9620693720627C15001B51CF /* LoginViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				963865EC205BF13400F530A0 /* View */,
 				96C04986205803450010B6D5 /* Main.storyboard */,
 				96C049A420594B7F0010B6D5 /* API.swift */,
+				96206935206277D9001B51CF /* LoginRequest.swift */,
 				96C049A620594CD60010B6D5 /* Contribution.swift */,
 				96C04989205803450010B6D5 /* Assets.xcassets */,
 				96C0498B205803450010B6D5 /* LaunchScreen.storyboard */,
@@ -385,12 +391,14 @@
 				96C04985205803450010B6D5 /* ViewController.swift in Sources */,
 				96C04983205803450010B6D5 /* AppDelegate.swift in Sources */,
 				96C049A520594B7F0010B6D5 /* API.swift in Sources */,
+				96206936206277D9001B51CF /* LoginRequest.swift in Sources */,
 				96C049A320594B430010B6D5 /* SendViewController.swift in Sources */,
 				96C049AB205969510010B6D5 /* SendViewModel.swift in Sources */,
 				963865F3205BFD9600F530A0 /* ContributionTableViewCell.swift in Sources */,
 				96C049A720594CD60010B6D5 /* Contribution.swift in Sources */,
 				963865FA205C8A1700F530A0 /* model.swift in Sources */,
 				963865EE205BF18F00F530A0 /* ViewModel.swift in Sources */,
+				9620693820627C15001B51CF /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

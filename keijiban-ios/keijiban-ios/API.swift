@@ -10,6 +10,7 @@ import Foundation
 import Moya
 
 public enum ContributionAPI {
+    case login(LoginRequest)
     case create(ContributionRequest)
     case list
     case update(String, UpdateContributionRequest)
@@ -29,6 +30,8 @@ extension ContributionAPI: TargetType{
             return "/message/\(id)"
         case .delete(let id):
             return "/message/\(id)"
+        case .login:
+            return "/login"
         }
     }
     
@@ -36,7 +39,7 @@ extension ContributionAPI: TargetType{
         switch self {
         case .list:
             return .get
-        case .create:
+        case .create, .login:
             return .post
         case .update:
             return .put
@@ -51,6 +54,8 @@ extension ContributionAPI: TargetType{
             return .requestJSONEncodable(contribution)
         case .update(_, let contribution):
             return .requestJSONEncodable(contribution)
+        case .login(let request):
+            return .requestJSONEncodable(request)
         default:
             return .requestPlain
         }
@@ -62,6 +67,8 @@ extension ContributionAPI: TargetType{
             return "{\"contributer\":\"homahi\", \"body\":\"hello\"}".data(using:String.Encoding.utf8)!
         case .list, .update, .delete:
             return "{\"contributer\":\"homahi\", \"body\":\"hello\"}".data(using:String.Encoding.utf8)!
+        case .login:
+            return "Success".data(using:String.Encoding.utf8)!
         }
     }
     
