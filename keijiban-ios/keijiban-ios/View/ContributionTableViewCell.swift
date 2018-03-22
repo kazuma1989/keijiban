@@ -35,7 +35,19 @@ class ContributionTableViewCell: UITableViewCell {
     }
     
     func configure(with isEditing: Observable<Bool>, editing: CocoaAction, cancel: CocoaAction, done: Action<(String, String), Void>, delete: CocoaAction) {
+        guard let id = UserDefaults.standard.string(forKey: "userId") else {
+            return
+        }
         isEditing.bind(to: body.rx.isUserInteractionEnabled).disposed(by: disposeBag)
+        
+        let isMineObservable = Observable<Bool>
+                .combineLatest(
+            Observable<String>.of(id).debug("id"),
+            Observable<String>.of(self.contributor.text!).debug("text")
+                ) {
+                    !($0 == $1)
+            }.debug("is")
+
         
         isEditing
             .map{ bool -> CGFloat in
@@ -48,8 +60,16 @@ class ContributionTableViewCell: UITableViewCell {
                 self.body.layer.borderWidth = width
             }).disposed(by: disposeBag)
         
-        isEditing.bind(to: editButton.rx.isHidden).disposed(by: disposeBag)
-        isEditing.bind(to: deleteButton.rx.isHidden).disposed(by: disposeBag)
+        let editButtonEnableObservable = Observable.combineLatest(
+            isMineObservable,
+            isEditing
+        ) {
+            $0 || $1
+            }.debug("hidden")
+        
+
+        editButtonEnableObservable.bind(to: editButton.rx.isHidden).disposed(by: disposeBag)
+        editButtonEnableObservable.bind(to: deleteButton.rx.isHidden).disposed(by: disposeBag)
         isEditing.map{ !$0 }.bind(to: doneButton.rx.isHidden).disposed(by: disposeBag)
         isEditing.map{ !$0 }.bind(to: cancelButton.rx.isHidden).disposed(by: disposeBag)
         

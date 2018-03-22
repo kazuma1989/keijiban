@@ -16,6 +16,7 @@ class ViewModel {
     let contribution: Observable<[Contribution]>
     let editingContributionId: BehaviorSubject<Int>
     let model: ContributionModel = ContributionModel.instance
+    let error = PublishSubject<Error>()
 
     init() {
         contribution = model.contribution.asObservable().debug("fromModel")
@@ -51,6 +52,9 @@ class ViewModel {
             self?.model.provider.rx.request(.delete(id)).debug("delete")
                 .subscribe(onSuccess: { _ in
                     self?.model.update()
+                },
+                           onError: { [weak self] error in
+                            self?.error.onError(error)
                 })
             return Observable.empty()
         }

@@ -31,14 +31,17 @@ class LoginViewController: UIViewController {
         }
         
         loginButton.rx.tap.withLatestFrom(loginObservable)
+            .do(onNext: {
+                UserDefaults.standard.set($0.id, forKey: "userId")
+            })
             .debug("tap")
             .flatMap { data -> Single<Response> in
            return provider.rx.request(.login(data))
             }
             .map(LoginResponse.self)
             .debug("login")
-            .subscribe ( onNext: { [weak self] request in
-                print(request.token)
+            .subscribe ( onNext: { [weak self] response in
+                UserDefaults.standard.set(response.token, forKey:"SessionKey")
                 self?.performSegue(withIdentifier: "login", sender: nil)
             },
                          onError: { _ in
@@ -46,6 +49,7 @@ class LoginViewController: UIViewController {
                             let action = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                             alert.addAction(action)
                             self.present(alert, animated:true, completion: nil)
+                UserDefaults.standard.removeObject(forKey: "userId")
             }
         ).disposed(by: disposeBag)
         

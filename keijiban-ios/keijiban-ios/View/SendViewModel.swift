@@ -17,24 +17,20 @@ class SendViewModel {
     
     init (
         input:(
-        contributer: Driver<String>,
         body: Driver<String>,
         sendTapped: Observable<Void>
         
         )
         ){
-        let contribution = Driver.combineLatest(input.contributer,input.body) {
-            (contributor: $0, body: $1)
-        }
-        
+
         let provider = MoyaProvider<ContributionAPI>(stubClosure: { (_: ContributionAPI) -> Moya.StubBehavior in
             return .never
         })
         
         send = input.sendTapped.debug("tapped")
-            .withLatestFrom(contribution)
-            .map{ pair -> ContributionRequest in
-                let contribution = ContributionRequest(contributor: pair.contributor ,body: pair.body)
+            .withLatestFrom(input.body)
+            .map{ body -> ContributionRequest in
+                let contribution = ContributionRequest(body: body)
                 return contribution
             }
             .debug("contribution")

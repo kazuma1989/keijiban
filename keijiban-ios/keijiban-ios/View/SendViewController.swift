@@ -23,7 +23,7 @@ class SendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let viewModel = SendViewModel(input: (contributer: name.rx.text.orEmpty.asDriver(),  body: body.rx.text.orEmpty.asDriver(), sendTapped: sendButton.rx.tap.map{_ in }))
+        let viewModel = SendViewModel(input: (body: body.rx.text.orEmpty.asDriver(), sendTapped: sendButton.rx.tap.map{_ in }))
         
         body.layer.borderWidth = 1.0
         body.layer.borderColor = UIColor.black.cgColor

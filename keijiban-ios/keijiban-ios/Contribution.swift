@@ -15,7 +15,6 @@ public struct Contribution: Codable {
 }
 
 public struct ContributionRequest: Codable {
-    let contributor: String
     let body: String
 }
 
