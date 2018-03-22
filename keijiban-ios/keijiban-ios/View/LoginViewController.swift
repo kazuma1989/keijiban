@@ -31,6 +31,9 @@ class LoginViewController: UIViewController {
         }
         
         loginButton.rx.tap.withLatestFrom(loginObservable)
+            .do(onNext: {
+                UserDefaults.standard.set($0.id, forKey: "userId")
+            })
             .debug("tap")
             .flatMap { data -> Single<Response> in
            return provider.rx.request(.login(data))
@@ -46,6 +49,7 @@ class LoginViewController: UIViewController {
                             let action = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                             alert.addAction(action)
                             self.present(alert, animated:true, completion: nil)
+                UserDefaults.standard.removeObject(forKey: "userId")
             }
         ).disposed(by: disposeBag)
         
