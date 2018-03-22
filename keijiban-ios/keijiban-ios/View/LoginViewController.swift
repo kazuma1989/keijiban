@@ -37,8 +37,8 @@ class LoginViewController: UIViewController {
             }
             .map(LoginResponse.self)
             .debug("login")
-            .subscribe ( onNext: { [weak self] request in
-                print(request.token)
+            .subscribe ( onNext: { [weak self] response in
+                UserDefaults.standard.set(response.token, forKey:"SessionKey")
                 self?.performSegue(withIdentifier: "login", sender: nil)
             },
                          onError: { _ in

@@ -73,6 +73,14 @@ extension ContributionAPI: TargetType{
     }
     
     public var headers: [String: String]? {
-        return nil
+        switch self {
+        case .login:
+            return nil
+        default:
+            guard let token = UserDefaults.standard.string(forKey: "SessionKey") else {
+                return nil
+            }
+            return ["Authorization": "Bearer " + token]
+        }
     }
 }

@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        viewModel.error.subscribe(onError: {
+          print($0)
+        }).disposed(by: disposeBag)
+        
         tableView.register(UINib(nibName: String(describing: ContributionTableViewCell.self), bundle: nil), forCellReuseIdentifier: "Cell")
         
         tableView.delegate = self

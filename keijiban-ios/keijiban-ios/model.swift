@@ -20,14 +20,14 @@ class ContributionModel {
     let provider = MoyaProvider<ContributionAPI>(stubClosure: {
         (_: ContributionAPI) -> Moya.StubBehavior in
         return .never
-    })
+    },plugins: [NetworkLoggerPlugin(verbose: true)])
     
     func update() {
         fetchContribution()
     }
     
     func fetchContribution() {
-        provider.rx.request(.list).map([Contribution].self).subscribe(onSuccess: { (contributions) in
+        provider.rx.request(.list).map([Contribution].self).debug("fetchContribution").subscribe(onSuccess: { (contributions) in
             self.contribution.onNext(contributions)
         }) { (error) in
             self.contribution.onError(error)
